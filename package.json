@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/psmiley2/StanfordTreehacks2021-server#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "connect-mongo": "^3.2.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
