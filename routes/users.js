@@ -9,6 +9,10 @@ const saltRounds = 12;
 const User = require("../models/User");
 const { ensureAuthenticated, forwardAuthenticated } = require("../config/auth");
 
+router.get("/sudarshan", (req, res) => {
+    res.status(200).send("hi sudarshan!!")
+})
+
 // Fetch an existing user
 router.get("/find/:userid", async (req, res) => {
     let user;
