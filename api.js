@@ -4,6 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 mongoose.set("useFindAndModify", false);
 const passport = require("passport");
+const userRoutes = require("./routes/users")
 
 const User = require("./models/User");
 let app = express();
