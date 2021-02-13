@@ -5,11 +5,11 @@ const mongoose = require("mongoose");
 mongoose.set("useFindAndModify", false);
 const passport = require("passport");
 
-// const User = require("./models/User");
+const User = require("./models/User");
 let app = express();
 
 // Passport Config
-// require("./config/passport")(passport);
+require("./config/passport")(passport);
 
 // Database
 const URI = `mongodb+srv://peter:${process.env.DB_PASSWORD}@cluster0.yksbr.mongodb.net/treehacks2021?retryWrites=true&w=majority`
@@ -47,13 +47,10 @@ app.use(
 // );
 
 // Passport middleware
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.use("/sudarshan", (req, res) => {
-    res.status(200).send("hi sudarshan!!")
-})
-// app.use("/users", userRoutes);
+app.use("/users", userRoutes);
 
 // Server Start
 const PORT = process.env.PORT || 8080;
