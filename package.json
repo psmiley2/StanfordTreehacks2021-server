@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/psmiley2/StanfordTreehacks2021-server#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1"
   }
 }
