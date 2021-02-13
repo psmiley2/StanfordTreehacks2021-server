@@ -51,7 +51,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use("/users", userRoutes);
+app.use("/sudarshan", (req, res) => {
+    res.status(200).send("hi sudarshan!!")
+})
+// app.use("/users", userRoutes);
 
 // Server Start
 const PORT = process.env.PORT || 8080;
