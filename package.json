@@ -1,0 +1,19 @@
+{
+  "name": "ls",
+  "version": "1.0.0",
+  "description": "treehacks2021",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psmiley2/StanfordTreehacks2021-server.git"
+  },
+  "author": "Peter Smiley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/psmiley2/StanfordTreehacks2021-server/issues"
+  },
+  "homepage": "https://github.com/psmiley2/StanfordTreehacks2021-server#readme"
+}
