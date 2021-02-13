@@ -6,10 +6,10 @@ mongoose.set("useFindAndModify", false);
 const passport = require("passport");
 const session = require("express-session");
 var MongoStore = require("connect-mongo")(session);
-const userRoutes = require("./routes/users");
+// const userRoutes = require("./routes/users");
 
-const User = require("./models/User");
-let app = express();
+// const User = require("./models/User");
+// let app = express();
 
 // Passport Config
 require("./config/passport")(passport);
