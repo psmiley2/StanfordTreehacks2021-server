@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/psmiley2/StanfordTreehacks2021-server/issues"
   },
-  "homepage": "https://github.com/psmiley2/StanfordTreehacks2021-server#readme"
+  "homepage": "https://github.com/psmiley2/StanfordTreehacks2021-server#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
