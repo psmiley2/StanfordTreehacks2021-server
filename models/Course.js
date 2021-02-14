@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-
 const lectureSchema = mongoose.Schema({
     title: {
         type: String,
@@ -55,6 +54,9 @@ const courseSchema = mongoose.Schema({
         default: []
     }
 })
+
+
+
 const Course = mongoose.model('Course', courseSchema)
 
-module.exports = { Course, Lecture , Thread} 
+module.exports = { Course, Lecture , Thread, courseSchema} 

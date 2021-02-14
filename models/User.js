@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const validator = require('validator')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const {courseSchema} = require("./Course")
 
 const userSchema = mongoose.Schema({
     email: {
@@ -25,7 +26,11 @@ const userSchema = mongoose.Schema({
             type: String,
             required: true
         }
-    }]
+    }],
+    courses: {
+        type: [String],
+        default: []
+    }
 })
 
 userSchema.pre('save', async function (next) {

@@ -1,7 +1,7 @@
 const express = require('express')
 const {Course} = require('../models/Course')
 const auth = require('../middleware/auth')
-
+const User = require("../models/User")
 const router = express.Router()
 
 router.post('/courses', auth, async (req, res) => {
@@ -106,5 +106,31 @@ router.post('/courses/id/:courseID/lecture/:lectureID', auth, async (req, res) =
     }
 })
 
+// Assign a user to a course
+router.post("/courses/id/:id", auth, async (req, res) => {
+    try {
+        let courseID = req.params.id; 
+        let userID = req.user._id
+        let user = {}
+
+        let action = {
+            $push: {"courses": courseID}
+        }
+
+        await User.findByIdAndUpdate(userID, action)
+        .then((u) => {
+            if (u) {
+                user = u
+            } else {
+                res.status(400).send("no course found for given id")
+            }
+        }).catch((err) => {
+            console.error(err)
+        })
+        res.status(200).send(user)
+    } catch (error) {
+       res.status(400).send(error) 
+    }
+})
 
 module.exports = router
