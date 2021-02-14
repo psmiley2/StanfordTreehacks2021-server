@@ -1,6 +1,7 @@
 const express = require('express')
 const port = process.env.PORT
 const userRouter = require('./routers/user')
+const courseRouter = require('./routers/course')
 require('./db/db')
 const cors = require("cors");
 
@@ -15,6 +16,7 @@ app.use(
 
 app.use(express.json())
 app.use(userRouter)
+app.use(courseRouter)
 
 app.listen(8080, () => {
     console.log(`Server running on port 8080`)
