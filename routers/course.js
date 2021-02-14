@@ -38,7 +38,7 @@ router.get("/courses/id/:id", auth, async (req, res) => {
 
 
 // Get a course by id
-router.get("/courses/community/:id", auth, async (req, res) => {
+router.get("/courses/community/:id", async (req, res) => {
     try {
         let {id} = req.params; 
         let courses = []
