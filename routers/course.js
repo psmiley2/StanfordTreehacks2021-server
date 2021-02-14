@@ -36,6 +36,29 @@ router.get("/courses/id/:id", auth, async (req, res) => {
     }
 })
 
+
+// Get a course by id
+router.get("/courses/community/:id", auth, async (req, res) => {
+    try {
+        let {id} = req.params; 
+        let courses = []
+
+        await Course.find({topic: id})
+        .then((cs) => {
+            if (cs) {
+                courses = cs
+            } else {
+                res.status(400).send("no courses found for given id")
+            }
+        }).catch((err) => {
+            console.error(err)
+        })
+        res.status(200).send(courses)
+    } catch (error) {
+       res.status(400).send(error) 
+    }
+})
+
 // Create a new lecture
 router.post('/courses/id/:courseID/lecture', auth, async (req, res) => {
     try {
