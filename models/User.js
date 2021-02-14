@@ -45,7 +45,7 @@ userSchema.pre('save', async function (next) {
 userSchema.methods.generateAuthToken = async function() {
     // Generate an auth token for the user
     const user = this
-    const token = jwt.sign({_id: user._id}, "fa255ae6c39eea9fd7811aa51c796a3fec880075") // Hard coding a secret key is the worst thing you can do. Must change this later!
+    const token = jwt.sign({_id: user._id}, "fa255ae6c39eea9fd7811aa51c796a3fec880075") 
     user.tokens = user.tokens.concat({token})
     await user.save()
     return token
